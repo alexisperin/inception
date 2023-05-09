@@ -6,7 +6,7 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /run/nginx
 RUN mkdir -p /etc/nginx/ssl
 
-COPY ./conf/my-nginx.conf /etc/sites-enabled/default
+COPY conf/my-nginx.conf /etc/nginx/sites-enabled/default
 
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/aperin.key -out /etc/nginx/ssl/aperin.crt -subj "/CN=aperin"
 
